@@ -1,0 +1,16 @@
+.card {
+  border-radius: 15px;
+  transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-top {
+  height: 180px; /* ↓ Reduced from 250px to 180px */
+  object-fit: cover; /* Keeps image nicely cropped */
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
