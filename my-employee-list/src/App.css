@@ -1,0 +1,443 @@
+.app-shell {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.15), transparent 42%),
+    radial-gradient(circle at 78% 0%, rgba(56, 189, 248, 0.2), transparent 46%),
+    radial-gradient(circle at 10% 80%, rgba(251, 191, 36, 0.16), transparent 50%),
+    linear-gradient(180deg, #f8fbff 0%, #eef3ff 45%, #f8fafc 100%);
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  padding-block: clamp(4rem, 6vw, 7rem);
+  padding-inline: clamp(1.5rem, 5vw, 4rem);
+}
+
+.employee-section {
+  position: relative;
+}
+
+.employee-section::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 -20% 0;
+  background: radial-gradient(circle at 10% 10%, rgba(14, 165, 233, 0.08), transparent 55%);
+  z-index: -1;
+  filter: blur(0.5px);
+}
+
+.employee-section .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-inline: clamp(1.25rem, 4vw, 2.75rem);
+}
+
+.employee-section .row {
+  justify-content: center;
+}
+
+.employee-section .col-12.col-xl-11,
+.employee-section .col-12.col-xxl-9 {
+  padding: 0;
+}
+
+.card {
+  border-radius: 1.25rem;
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+}
+
+.card-footer {
+  border-bottom-left-radius: 1.25rem;
+  border-bottom-right-radius: 1.25rem;
+}
+
+.badge {
+  letter-spacing: 0.04em;
+}
+
+.section-headline {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.headline-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  background: rgba(99, 102, 241, 0.12);
+  color: #3730a3;
+  padding: 0.35rem 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+}
+
+.headline-title {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  margin: 1rem 0 0.5rem;
+  color: #0f172a;
+}
+
+.headline-subtitle {
+  max-width: 44ch;
+  margin: 0 auto;
+  color: #475569;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+  margin-inline: auto;
+  max-width: 900px;
+  margin-top: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+.metric-card {
+  border-radius: 1.1rem;
+  padding: 1.25rem 1.5rem;
+  background: linear-gradient(145deg, rgba(241, 245, 255, 0.85), rgba(248, 250, 252, 0.95));
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  box-shadow: 0 15px 35px -18px rgba(15, 23, 42, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.metric-card::after {
+  content: '';
+  width: 42px;
+  height: 4px;
+  border-radius: 999px;
+  margin-top: 0.5rem;
+}
+
+.metric-card-purple::after {
+  background: linear-gradient(90deg, #a855f7, #6366f1);
+}
+
+.metric-card-teal::after {
+  background: linear-gradient(90deg, #14b8a6, #0ea5e9);
+}
+
+.metric-card-indigo::after {
+  background: linear-gradient(90deg, #4f46e5, #a855f7);
+}
+
+.metric-card-orange::after {
+  background: linear-gradient(90deg, #f97316, #facc15);
+}
+
+.metric-label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.metric-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.employee-table-card {
+  overflow: hidden;
+  margin-inline: auto;
+  margin-top: 2.5rem;
+  max-width: 100%;
+}
+
+.employee-table-card .card-header,
+.employee-table-card .card-footer {
+  padding-inline: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.employee-table-card .card-header {
+  padding-top: clamp(1.6rem, 3vw, 2.3rem);
+  padding-bottom: clamp(1rem, 2vw, 1.4rem);
+}
+
+.employee-table-card .card-footer {
+  padding-block: 1.4rem;
+}
+
+.employee-table-card .card-footer > .d-flex {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.employee-table-card .table-responsive {
+  padding-inline: clamp(1.5rem, 4vw, 2.5rem);
+  padding-block: clamp(0.75rem, 2vw, 1.25rem);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.card-subtitle {
+  font-size: 0.95rem;
+}
+
+.table-legend {
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+  color: #475569;
+}
+
+.legend-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.04);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.legend-dot-it {
+  background: #2563eb;
+}
+
+.legend-dot-hr {
+  background: #d946ef;
+}
+
+.legend-dot-marketing {
+  background: #f97316;
+}
+
+.legend-dot-finance {
+  background: #10b981;
+}
+
+.table-modern {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  color: #0f172a;
+}
+
+.table-modern thead {
+  background: rgba(226, 232, 240, 0.6);
+  backdrop-filter: blur(8px);
+}
+
+.table-modern thead th {
+  padding: 1rem 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #475569;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+.table-modern thead th:first-child {
+  border-top-left-radius: 1rem;
+}
+
+.table-modern thead th:last-child {
+  border-top-right-radius: 1rem;
+}
+
+.table-modern tbody tr {
+  transition: all 180ms ease;
+}
+
+.table-modern tbody tr:hover {
+  background: rgba(59, 130, 246, 0.08);
+  transform: translateY(-2px);
+  box-shadow: inset 0 0 0 1px rgba(59, 130, 246, 0.15);
+}
+
+.table-modern tbody td,
+.table-modern tbody th {
+  padding: 1.15rem 0.75rem;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.7);
+}
+
+.table-modern tbody tr:last-of-type td,
+.table-modern tbody tr:last-of-type th {
+  border-bottom: none;
+}
+
+.employee-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.employee-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+}
+
+.employee-name {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #0f172a;
+}
+
+.employee-role {
+  font-size: 0.85rem;
+}
+
+.department-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  background: rgba(148, 163, 184, 0.14);
+  color: #475569;
+}
+
+.pill-hr {
+  background: rgba(244, 114, 182, 0.2);
+  color: #be185d;
+}
+
+.pill-it {
+  background: rgba(96, 165, 250, 0.18);
+  color: #1d4ed8;
+}
+
+.pill-finance {
+  background: rgba(110, 231, 183, 0.2);
+  color: #047857;
+}
+
+.pill-marketing {
+  background: rgba(253, 186, 116, 0.2);
+  color: #c2410c;
+}
+
+.pill-operations {
+  background: rgba(148, 163, 184, 0.25);
+  color: #334155;
+}
+
+.designation-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem 1.1rem;
+  border-radius: 0.75rem;
+  background: rgba(236, 233, 252, 0.8);
+  color: #5b21b6;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.salary-amount {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #0f172a;
+}
+
+.salary-caption {
+  color: #94a3b8;
+  margin-left: 0.25rem;
+}
+
+.footer-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.9rem 1.2rem;
+  border-radius: 0.9rem;
+  background: rgba(248, 250, 252, 0.85);
+  border: 1px solid rgba(226, 232, 240, 0.7);
+  align-items: center;
+  text-align: center;
+}
+
+.footer-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.footer-value {
+  font-weight: 700;
+  color: #0f172a;
+  font-size: 1.05rem;
+}
+
+@media (max-width: 768px) {
+  .card-header {
+    align-items: flex-start;
+  }
+
+  .table-legend {
+    justify-content: flex-start;
+  }
+
+  .table-modern thead {
+    display: none;
+  }
+
+  .table-modern tbody tr {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .table-modern tbody td,
+  .table-modern tbody th {
+    padding: 0;
+    border-bottom: none;
+  }
+
+  .table-modern tbody tr + tr {
+    border-top: 1px solid rgba(226, 232, 240, 0.6);
+  }
+
+  .salary-amount {
+    font-size: 1.1rem;
+  }
+
+  .designation-chip {
+    width: fit-content;
+  }
+
+  .employee-section .container {
+    padding-inline: 1rem;
+  }
+
+  .employee-table-card {
+    margin-top: 2rem;
+  }
+
+  .employee-table-card .card-footer > .d-flex {
+    align-items: flex-start;
+  }
+}

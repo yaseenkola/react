@@ -42,7 +42,7 @@ const products: ProductProps[] = [
   },
 ];
 
-const App: React.FC = () => {
+function App() {
   return (
     <div className="app-wrapper min-vh-100">
       <div className="container py-5">
@@ -66,6 +66,7 @@ const App: React.FC = () => {
       </div>
     </div>
   );
-};
+}
 
 export default App;
+
