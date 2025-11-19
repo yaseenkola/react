@@ -7,6 +7,7 @@ import UserList from "./components/UserList";
 import UserDetails from "./components/UserDetails";
 import Contact from "./components/Contact";
 import { NavLink } from "react-router-dom";
+import EmployeeList from "./components/EmployeeList";
 
 function App() {
   return (
@@ -72,6 +73,11 @@ function App() {
                     Contact
                   </Link>
                 </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/employees">
+                    Employee List
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
@@ -85,6 +91,7 @@ function App() {
             <Route path="/users/:id" element={<UserDetails />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/employees" element={<EmployeeList />} />
           </Routes>
         </main>
       </div>
