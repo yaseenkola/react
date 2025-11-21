@@ -8,6 +8,8 @@ import UserDetails from "./components/UserDetails";
 import Contact from "./components/Contact";
 import { NavLink } from "react-router-dom";
 import EmployeeList from "./components/EmployeeList";
+import AssignmentUserList from "./components/AssignmentUserList";
+import ProductList from "./components/ProductList";
 
 function App() {
   return (
@@ -78,6 +80,16 @@ function App() {
                     Employee List
                   </Link>
                 </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/ausers">
+                    User List
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/products">
+                    Product List
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
@@ -92,6 +104,8 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/employees" element={<EmployeeList />} />
+            <Route path="/ausers" element={<AssignmentUserList />} />
+            <Route path="/products" element={<ProductList />} />
           </Routes>
         </main>
       </div>
