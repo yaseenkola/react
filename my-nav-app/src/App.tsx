@@ -10,6 +10,7 @@ import { NavLink } from "react-router-dom";
 import EmployeeList from "./components/EmployeeList";
 import AssignmentUserList from "./components/AssignmentUserList";
 import ProductList from "./components/ProductList";
+import RecipeList from "./components/RecipeList";
 
 function App() {
   return (
@@ -90,6 +91,11 @@ function App() {
                     Product List
                   </Link>
                 </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/recipes">
+                    Recipe List
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
@@ -106,6 +112,7 @@ function App() {
             <Route path="/employees" element={<EmployeeList />} />
             <Route path="/ausers" element={<AssignmentUserList />} />
             <Route path="/products" element={<ProductList />} />
+            <Route path="/recipes" element={<RecipeList />} />
           </Routes>
         </main>
       </div>
