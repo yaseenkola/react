@@ -11,6 +11,7 @@ import EmployeeList from "./components/EmployeeList";
 import AssignmentUserList from "./components/AssignmentUserList";
 import ProductList from "./components/ProductList";
 import RecipeList from "./components/RecipeList";
+import RecipeSearch from "./components/RecipeSearch";
 
 function App() {
   return (
@@ -96,6 +97,11 @@ function App() {
                     Recipe List
                   </Link>
                 </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/recipes/search">
+                    Recipe Search
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
@@ -113,6 +119,7 @@ function App() {
             <Route path="/ausers" element={<AssignmentUserList />} />
             <Route path="/products" element={<ProductList />} />
             <Route path="/recipes" element={<RecipeList />} />
+            <Route path="/recipes/search" element={<RecipeSearch />} />
           </Routes>
         </main>
       </div>
