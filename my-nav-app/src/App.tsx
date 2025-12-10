@@ -16,6 +16,7 @@ import RecipeGallery from "./components/RecipeGallery";
 import ProductSearch from "./components/ProductSearch";
 import CourseList4 from "./components/CourseList4";
 import CourseAdd from "./components/CourseAdd";
+import CourseEdit from "./components/CourseEdit";
 
 function App() {
   return (
@@ -144,6 +145,7 @@ function App() {
             <Route path="/course/list" element={<CourseList />} />
             <Route path="/courses/list" element={<CourseList4 />} />
             <Route path="/add-course" element={<CourseAdd />} />
+            <Route path="/edit-course/:id" element={<CourseEdit />} />
           </Routes>
         </main>
       </div>
