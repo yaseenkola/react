@@ -1,26 +1,43 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-// API endpoint for courses resource on MockAPI
 const API_URL = "https://693323a2e5a9e342d272088f.mockapi.io/courses";
 
 const CourseAdd = () => {
-  // State to store the course title input
   const [title, setTitle] = useState<string>("");
-  // State to store the course description input
   const [description, setDescription] = useState<string>("");
 
-  // Hook to navigate to a different route after adding a course
-    const navigate = useNavigate();
+  const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState<string | null>(null);
 
-  // Function to add a new course by sending a POST request to the API
+  const navigate = useNavigate();
+
   const addCourse = async () => {
-    // Create a course object from the input fields
-    const course = {
-      title,
-      description,
-    };
-    // Send POST request to add the course
+    setError(null);
+    setSuccess(null);
+
+    // Validation
+    if (title.trim().length === 0) {
+      setError("Course title cannot be empty");
+      return;
+    }
+
+    if (description.trim().length === 0) {
+      setError("Course description cannot be empty");
+      return;
+    }
+
+    if (description.length < 10) {
+      setError("Description must be at least 10 characters long");
+      return;
+    }
+
+    setSuccess("Course details are valid! Adding course...");
+
+    // Create a course object
+    const course = { title, description };
+
+    // Hit the POST API
     await fetch(API_URL, {
       method: "POST",
       headers: {
@@ -28,16 +45,29 @@ const CourseAdd = () => {
       },
       body: JSON.stringify(course),
     });
-    // Navigate back to the courses list after adding
-     navigate("/courses/list");
+
+    // Navigate to the list page
+    navigate("/courses/list");
   };
+
+  let errorMessage = null;
+  if (error) {
+    errorMessage = <div className="alert alert-danger">{error}</div>;
+  }
+
+  let successMessage = null;
+  if (success) {
+    successMessage = <div className="alert alert-success">{success}</div>;
+  }
 
   return (
     <div className="container">
       <h2 className="text-primary my-4">Add Course</h2>
-      {/* Form to add a new course */}
+
+      {errorMessage}
+      {successMessage}
+
       <div id="addCourseform" className="border border-1 rounded shadow p-4">
-        {/* Input for course title */}
         <div className="mb-4">
           <label htmlFor="titleTextBox" className="form-label fw-bold">
             Course Title
@@ -46,12 +76,12 @@ const CourseAdd = () => {
             type="text"
             id="titleTextBox"
             className="form-control"
-            placeholder="Enter Course Title like Java, Python, React, etc"
+            placeholder="Enter Course Title like Java, Python..."
             value={title}
-            onChange={(event) => setTitle(event.target.value)} // Update title state on change
+            onChange={(event) => setTitle(event.target.value)}
           />
         </div>
-        {/* Input for course description */}
+
         <div className="mb-4">
           <label htmlFor="descriptionTextBox" className="form-label fw-bold">
             Course Description
@@ -62,12 +92,12 @@ const CourseAdd = () => {
             className="form-control"
             placeholder="Enter Course Description such as topics"
             value={description}
-            onChange={(event) => setDescription(event.target.value)} // Update description state on change
+            onChange={(event) => setDescription(event.target.value)}
           />
         </div>
-        {/* Button to add the course */}
+
         <div className="mt-5">
-          <button className="btn btn-primary w-100" onClick={() => addCourse()}>
+          <button className="btn btn-primary w-100" onClick={addCourse}>
             Add Course
           </button>
         </div>
@@ -75,4 +105,5 @@ const CourseAdd = () => {
     </div>
   );
 };
+
 export default CourseAdd;
