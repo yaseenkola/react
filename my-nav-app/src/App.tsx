@@ -17,6 +17,9 @@ import ProductSearch from "./components/ProductSearch";
 import CourseList4 from "./components/CourseList4";
 import CourseAdd from "./components/CourseAdd";
 import CourseEdit from "./components/CourseEdit";
+import CustomerList from "./components/CustomerList";
+import CustomerAdd from "./components/CustomerAdd";
+import CustomerEdit from "./components/CustomerEdit";
 
 function App() {
   return (
@@ -122,6 +125,11 @@ function App() {
                     Course List
                   </Link>
                 </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/customers/list">
+                    Customer List
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
@@ -146,6 +154,9 @@ function App() {
             <Route path="/courses/list" element={<CourseList4 />} />
             <Route path="/add-course" element={<CourseAdd />} />
             <Route path="/edit-course/:id" element={<CourseEdit />} />
+            <Route path="/customers/list" element={<CustomerList />} />
+            <Route path="/customers/add" element={<CustomerAdd />} />
+            <Route path="/customers/edit/:id" element={<CustomerEdit />} />
           </Routes>
         </main>
       </div>
