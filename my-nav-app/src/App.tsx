@@ -30,6 +30,7 @@ import CustomerAdd from "./components/CustomerAdd";
 import CustomerEdit from "./components/CustomerEdit";
 
 import { ThemeContext, type Theme } from "./Context/ThemeContext";
+import ThemedTable from "./components/ThemedTable";
 
 function App() {
   const [theme, setTheme] = useState<Theme>(() => {
@@ -143,6 +144,9 @@ function App() {
                   <li className="nav-item">
                     <Link className="nav-link" to="/customers/add">Add Customer</Link>
                   </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/themed-table">Themed Table</Link>
+                  </li>
                 </ul>
 
                 {/* Theme Toggle Button */}
@@ -174,6 +178,7 @@ function App() {
               <Route path="/customers/list" element={<CustomerList />} />
               <Route path="/customers/add" element={<CustomerAdd />} />
               <Route path="/customers/edit/:id" element={<CustomerEdit />} />
+              <Route path="/themed-table" element={<ThemedTable />} />
             </Routes>
           </main>
         </div>
